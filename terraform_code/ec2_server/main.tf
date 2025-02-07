@@ -13,7 +13,7 @@ provider "aws" {
 
 # STEP1: CREATE SG
 resource "aws_security_group" "my-sg" {
-  name        = "JENKINS-SERVER-SG"
+  name        = "jenkins server sg"
   description = "Jenkins Server Ports"
   
   # Port 22 is required for SSH Access
