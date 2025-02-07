@@ -134,7 +134,7 @@ resource "aws_security_group" "my-sg" {
 }
 
 # STEP2: CREATE EC2 USING PEM & SG
-resource "aws_instance" "my-ec2" {
+resource "aws_instance" "my-project3teir" {
   ami           = var.ami   
   instance_type = var.instance_type
   key_name      = var.key_name        
