@@ -153,7 +153,7 @@ resource "aws_instance" "my-project3teir" {
     # ESTABLISHING SSH CONNECTION WITH EC2
     connection {
       type        = "ssh"
-      private_key = file("./zomata.pem") # replace with your key-name 
+      private_key = file("./zomato.pem") # replace with your key-name 
       user        = "ubuntu"
       host        = self.public_ip
     }
