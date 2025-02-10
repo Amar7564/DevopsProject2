@@ -14,3 +14,10 @@ locals {
 provider "aws" {
   region = "us-east-2"
 }
+
+backend "s3" {
+    bucket = "samples3325"
+    key    = "cluster/terraform.tfstate"
+    region = "us-east-2"
+  }
+}
