@@ -5,9 +5,9 @@ terraform {
       version = "5.67.0"
     }
   }
-}
 
-backend "s3" {
+
+  backend "s3" {
     bucket = "sampl87888"
     key    = "satish/terraform.tfstate"
     region = "us-east-2"
