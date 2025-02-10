@@ -1,13 +1,8 @@
-locals {
-  region = "us-east-2"
-  name   = "amazon-primemovies-cluster"
-  vpc_cidr = "10.0.0.0/16"
-  azs      = ["us-east-2a", "us-east-2b"]
-  public_subnets  = ["10.0.1.0/24", "10.0.2.0/24"]
-  private_subnets = ["10.0.3.0/24", "10.0.4.0/24"]
-  intra_subnets   = ["10.0.5.0/24", "10.0.6.0/24"]
-  tags = {
-    Example = local.name
+terraform {
+  backend "s3" {
+    bucket = "clusterbucker"
+    key    = "cluster/terraform.tfstate"
+    region = "us-east-2"
   }
 }
 
@@ -15,9 +10,17 @@ provider "aws" {
   region = "us-east-2"
 }
 
-backend "s3" {
-    bucket = "samples3325"
-    key    = "cluster/terraform.tfstate"
-    region = "us-east-2"
+locals {
+  region         = "us-east-2"
+  name           = "amazon-primemovies-cluster"
+  vpc_cidr       = "10.0.0.0/16"
+  azs            = ["us-east-2a", "us-east-2b"]
+  public_subnets  = ["10.0.1.0/24", "10.0.2.0/24"]
+  private_subnets = ["10.0.3.0/24", "10.0.4.0/24"]
+  intra_subnets   = ["10.0.5.0/24", "10.0.6.0/24"]
+
+  tags = {
+    Example = local.name
+  }
 }
 
